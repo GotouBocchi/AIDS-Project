@@ -6,6 +6,12 @@
 define e = Character("Eileen")
 
 
+label splashscreen:
+    # Display 18+ content warning before the main menu loads
+    call screen age_warning
+    return
+
+
 # The game starts here.
 
 label start:

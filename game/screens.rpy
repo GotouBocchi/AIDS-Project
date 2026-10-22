@@ -1619,3 +1619,59 @@ style slider_vbox:
 style slider_slider:
     variant "small"
     xsize 900
+
+
+################################################################################
+## 18+ Content Warning / Age Verification Screen
+##
+## Displays a mandatory age verification and content warning before the main menu.
+################################################################################
+
+screen age_warning():
+    
+    # Ensure player cannot click behind or bypass the warning screen
+    modal True
+    zorder 300
+
+    frame:
+        background "#0b0b0b"
+        xfill True
+        yfill True
+
+        vbox:
+            xalign 0.5
+            yalign 0.5
+            spacing 40
+            xsize 1000
+
+            # Warning Header
+            text "18+ CONTENT WARNING" size 40 color "#ff3333" xalign 0.5 text_align 0.5 bold True
+
+            # Explanatory Text in clear layman terms
+            text "Welcome to AIDS-Project.\n\nThis game contains mature adult themes and unconstrained AI-generated narratives intended strictly for mature audiences.\n\nYou must be 18 years of age or older (or the legal age of majority in your region) to play.\n\nAre you 18 years of age or older?" size 22 color "#f0f0f0" xalign 0.5 text_align 0.5 line_spacing 8
+
+            # Layman Action Buttons (Yes / No alternative)
+            hbox:
+                xalign 0.5
+                spacing 80
+                ypos 10
+
+                textbutton "Yes, I am 18+":
+                    action Return()
+                    padding (30, 16)
+                    background "#1a331a"
+                    hover_background "#264d26"
+                    text_color "#ffffff"
+                    text_hover_color "#44ff44"
+                    text_size 20
+
+                textbutton "I am under 18":
+                    action Quit(confirm=False)
+                    padding (30, 16)
+                    background "#331a1a"
+                    hover_background "#4d2626"
+                    text_color "#ffffff"
+                    text_hover_color "#ff4444"
+                    text_size 20
+
+
