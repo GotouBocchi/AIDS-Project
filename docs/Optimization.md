@@ -12,4 +12,4 @@ Target hardware includes systems with limited RAM, older multi-core/single-core 
 - **Live 2.5D Asset Optimization:** 
   - Use lightweight Ren'Py ATL (Animation and Transformation Language) for parallax and subtle motion rather than heavy external shaders or continuous particle systems.
   - Keep character layer count minimal (e.g., base, eyes, mouth, hair) and purge unused textures promptly from VRAM.
-- **Local LLM Efficiency:** Prompt lengths must be optimized, and generation parameters (e.g., token limits, quantization profiles) configured conservatively to suit local inference speeds (e.g., Ollama running Hermes 3).
+- **Local LLM Efficiency:** Prompt lengths must be optimized, and generation parameters (e.g., token limits, quantization profiles) configured conservatively to suit local inference speeds (e.g., Ollama running Dolphin-Qwen2.5).

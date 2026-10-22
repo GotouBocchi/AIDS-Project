@@ -3,7 +3,7 @@
 ## 1. Pinned Tool Versions and Code Quality Stack
 - **Ren'Py Engine:** `8.3.4` (Embedded Python `3.9.18`)
 - **Local LLM Runtime:** `Ollama v0.5.1+`
-- **LLM Model:** `hermes3:3b` (Optimized for weak PCs, ~2GB-3GB RAM; superior creative writing, roleplay, and romantic/dramatic narrative depth without restrictive refusal filters)
+- **LLM Model:** `dolphin-qwen2.5:3b` (Optimized for 8GB+ PCs, ~2GB RAM footprint; superior creative writing, roleplay, and romantic/dramatic narrative depth without restrictive refusal filters)
 - **Python Linter and Formatter:** `Ruff v0.6.9` / `Flake8 v7.1.1`
 - **Python Type Checker:** `mypy v1.11.2`
 - **Ren'Py Code Validator:** Ren'Py Built-in Lint tool (via Ren'Py Launcher / CLI)
@@ -21,7 +21,7 @@ Each character persona possesses intrinsic gravitational bias toward standard na
   - *Resolution Style:* High-tension conflict, severe consequences, and tragic fallouts.
 
 ## 3. Prompt Guardrails and Objective Alignment
-- **Strict System Anchoring:** Every prompt sent to Hermes 3 is prefixed with character persona, affinity metrics, and standard narrative ending bias.
+- **Strict System Anchoring:** Every prompt sent to Dolphin-Qwen2.5 is prefixed with character persona, affinity metrics, and standard narrative ending bias.
 - **Anti-Drift Constraints:** Preventing fourth-wall breaks, lecturing, or out-of-scope wandering.
 - **Output Structuring:** Clean parsing tags for Ren'Py.
 

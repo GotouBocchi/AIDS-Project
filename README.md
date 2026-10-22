@@ -1,17 +1,17 @@
-# Aids-Project: AI-Driven Live 2.5D Story
+# Aids-Project: AI-Driven Interactive Story Game
 
-Aids-Project is an experimental visual novel framework built on the Ren'Py engine. It combines free-form player text input, dynamic AI-driven intent and dialogue generation, and Live 2.5D visual presentation into a cohesive, living narrative experience.
+Aids-Project is a free, open-source story game where you can type whatever you want instead of choosing from fixed dialogue options. Powered by a smart offline AI running right on your computer, the system acts as a dynamic narrator and persona generator, shaping characters, dialogue, and dramatic arcs in real time based on your interactions.
 
-## Project Vision and Gameplay Loop
-- **Free-Form Player Input:** Players type their own actions and responses rather than selecting from rigid menus.
-- **Dynamic AI Direction:** The local LLM interprets player intent and generates context-aware dialogue and story progression.
-- **Domain Guardrails:** Strict system prompts restrict the local model (Hermes 3) to narrative roleplay and storytelling, ensuring predictable, high-quality output on weak hardware.
-- **Live 2.5D Presentation:** Layered character assets and subtle parallax depth bring characters to life without performance lag.
+## How It Works
+- **Type What You Want:** Instead of picking from a preset list of choices, you type your own replies and actions.
+- **Dynamic AI Narrator & Personas:** The AI sets up and maintains characters and narrative tones on the fly, adapting seamlessly to your choices and emotional direction without rigid scripts.
+- **Runs Smoothly on Normal PCs:** Built to run locally on your computer without needing expensive graphics cards or internet access.
 
-## Technical Overview
-- **Engine:** [Ren'Py](https://www.renpy.org/)
-- **Core Technology:** Local LLM integration (Hermes 3 via Ollama) with intent analysis and strict prompt guardrails.
-- **Architecture:** Modular Python/Ren'Py hybrid designed for real-time text processing and lightweight pseudo-3D rendering.
+## Quick Facts
+- **100% Free & Offline:** No internet required, no subscriptions, and zero ads.
+- **Lightweight:** Designed to run smoothly even on older or modest computers.
 
-## Getting Started
-(Initial setup and installation instructions will be added as the project develops.)
+## Version History
+See [`history.md`](history.md) for version updates and patch notes.
+
+
