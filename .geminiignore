@@ -1,0 +1,25 @@
+# Dependencies
+game/saves/
+game/cache/
+
+# Assets (Images, Audio, Video)
+game/gui/
+game/images/
+game/audio/
+**/*.png
+**/*.jpg
+**/*.jpeg
+**/*.webp
+**/*.ogg
+**/*.mp3
+**/*.wav
+**/*.mp4
+**/*.webm
+
+# System / Git
+.git/
+.vscode/
+
+# Ren'Py Compiled Files
+**/*.rpyc
+**/*.rpymc
