@@ -1,17 +1,21 @@
-# AIDS-Project: AI-Driven Interactive Story Game
+# AIDS-Project: AI-Driven Interactive Story Game (v0.0.0-dev)
 
-AIDS-Project is a free, open-source 18+ unrestricted story game where you can type whatever you want instead of choosing from fixed dialogue options. Powered by a smart offline AI running right on your computer, the system acts as a dynamic narrator and persona generator, shaping characters, dialogue, and dramatic arcs in real time based on your interactions with zero safety refusals or censorship.
+AIDS-Project is a 100% free, open-source 18+ unrestricted AI-driven visual novel framework built on Ren'Py 8.3.4. 
 
-## How It Works
-- **Type What You Want:** Instead of picking from a preset list of choices, you type your own replies and actions.
-- **Dynamic AI Narrator & Personas:** The AI sets up and maintains characters and narrative tones on the fly, adapting seamlessly to your choices and emotional direction without rigid scripts.
-- **Runs Smoothly on Normal PCs:** Built to run locally on your computer without needing expensive graphics cards or internet access.
+> **Status:** **Pure Initialization Phase (`v0.0.0-dev`)**. No game code, gameplay loops, or automated tests have been implemented yet. The workspace is currently set up with core project architecture, documentation standards, and narrator persona definitions.
+
+## Project Vision & Architecture
+- **18+ Unrestricted Mandate:** Unconstrained narrative generation (`dolphin-qwen2.5:3b` via Ollama) with zero safety refusals, censorship filters, or moralizing lectures.
+- **Free-Form Player Input:** Designed to replace static menu choices with player text input.
+- **Narrator Personas (`game/python_modules/story_personas.py`):** Overarching narrative director frameworks with distinct ending biases (Optimistic, Melancholic, Fatalistic, Chaotic) constrained by character states and stage background feelings.
+- **Low-End PC Optimization:** Built to run locally on modest hardware with zero cloud API fees.
 
 ## Quick Facts
 - **100% Free & Offline:** No internet required, no subscriptions, and zero ads.
-- **Lightweight:** Designed to run smoothly even on older or modest computers.
+- **Phase:** Initialization / Pre-development setup.
 
-## Version History
-See [`history.md`](history.md) for version updates and patch notes.
-
-
+## Documentation & History
+- **Version History & Status:** [`history.md`](history.md)
+- **Project Structure:** [`docs/structure.md`](docs/structure.md)
+- **Development Standards:** [`docs/standards.md`](docs/standards.md)
+- **Optimization Guidelines:** [`docs/optimization.md`](docs/optimization.md)
