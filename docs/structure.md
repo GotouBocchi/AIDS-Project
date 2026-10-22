@@ -1,4 +1,4 @@
-# Project Structure & File Map
+# Project Structure and File Map
 
 Maps out every file and directory to ensure precise file targeting without repository-wide scans.
 
@@ -6,6 +6,7 @@ Maps out every file and directory to ensure precise file targeting without repos
 | :--- | :--- |
 | `gemini.md` | Core project index and architecture overview. |
 | `README.md` | Public-facing player overview and project vision. |
+| `CHANGELOG.md` | Version history and patch notes. |
 | `docs/structure.md` | This file map. |
 | `docs/optimization.md` | Low-end PC hardware constraints and 2.5D asset budgets. |
 | `docs/standards.md` | Pinned versions, prompt guardrails, and dating sim ending architecture. |

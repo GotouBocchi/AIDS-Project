@@ -1,11 +1,11 @@
-# AIDS-Project: AI-Driven Live 2.5D Story
+# Aids-Project: AI-Driven Live 2.5D Story
 
-**AIDS-Project** is an experimental visual novel framework built on the Ren'Py engine. It combines **free-form player text input**, **dynamic AI-driven intent and dialogue generation**, and **Live 2.5D visual presentation** into a cohesive, living narrative experience.
+Aids-Project is an experimental visual novel framework built on the Ren'Py engine. It combines free-form player text input, dynamic AI-driven intent and dialogue generation, and Live 2.5D visual presentation into a cohesive, living narrative experience.
 
-## Project Vision & Gameplay Loop
+## Project Vision and Gameplay Loop
 - **Free-Form Player Input:** Players type their own actions and responses rather than selecting from rigid menus.
 - **Dynamic AI Direction:** The local LLM interprets player intent and generates context-aware dialogue and story progression.
-- **Domain Guardrails:** Strict system prompts restrict the local model (e.g., Hermes 3) to narrative roleplay and storytelling, ensuring predictable, high-quality output on weak hardware.
+- **Domain Guardrails:** Strict system prompts restrict the local model (Hermes 3) to narrative roleplay and storytelling, ensuring predictable, high-quality output on weak hardware.
 - **Live 2.5D Presentation:** Layered character assets and subtle parallax depth bring characters to life without performance lag.
 
 ## Technical Overview
