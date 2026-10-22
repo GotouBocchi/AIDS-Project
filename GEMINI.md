@@ -1,6 +1,6 @@
-# Aids-Project (AI-Driven Live 2.5D Visual Novel)
+# AIDS-Project (AI-Driven Live 2.5D Visual Novel)
 
-The Aids-Project is a 100% free, no-budget open-source visual novel built on Ren'Py 8.3.4, featuring Live 2.5D visuals and real-time AI-driven narrative generation (`dolphin-qwen2.5:3b` via Ollama).
+The AIDS-Project is a 100% free, no-budget open-source visual novel built on Ren'Py 8.3.4, featuring Live 2.5D visuals and real-time AI-driven narrative generation (`dolphin-qwen2.5:3b` via Ollama).
 
 ## Core Architecture and Loop
 1. **Player Text Input:** Free-form player input replaces static menu choices.

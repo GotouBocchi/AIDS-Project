@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to the Aids-Project will be documented in this file. Versioning follows semantic versioning principles.
+All notable changes to the AIDS-Project will be documented in this file. Versioning follows semantic versioning principles.
 
 ## [1.0.0] - 2026-10-22
 ### Added
