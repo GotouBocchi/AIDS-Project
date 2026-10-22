@@ -1,9 +1,8 @@
-# Low-End PC Optimization Mandate & Guidelines
+# Optimization & Performance
 
 Target hardware includes systems with limited RAM, older multi-core/single-core CPUs, and modest integrated GPUs running both local LLMs and Live 2.5D visual layers. 
 
-## 1. The Optimization Agent Role
-An **Optimization Agent** or strict review protocol must be applied to all features and changes to ensure adherence to hardware constraints:
+## 1. The Optimization Protocol
 - **Resource Auditing:** Every new script, asset layer, or background process must be audited for memory and GPU/CPU footprint.
 - **Strict Veto Power:** Any architectural addition that causes noticeable input lag, memory leaks, texture bloat, or freezes on low-end hardware must be rejected or refactored before merging.
 
