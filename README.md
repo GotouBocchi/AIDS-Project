@@ -5,12 +5,12 @@
 ## Project Vision & Gameplay Loop
 - **Free-Form Player Input:** Players type their own actions and responses rather than selecting from rigid menus.
 - **Dynamic AI Direction:** The local LLM interprets player intent and generates context-aware dialogue and story progression.
-- **Domain Guardrails:** Strict system prompts restrict the local model (e.g., Gemma 2B) to narrative roleplay and storytelling, ensuring predictable, high-quality output on weak hardware.
+- **Domain Guardrails:** Strict system prompts restrict the local model (e.g., Hermes 3) to narrative roleplay and storytelling, ensuring predictable, high-quality output on weak hardware.
 - **Live 2.5D Presentation:** Layered character assets and subtle parallax depth bring characters to life without performance lag.
 
 ## Technical Overview
 - **Engine:** [Ren'Py](https://www.renpy.org/)
-- **Core Technology:** Local LLM integration (Gemma via Ollama) with intent analysis and strict prompt guardrails.
+- **Core Technology:** Local LLM integration (Hermes 3 via Ollama) with intent analysis and strict prompt guardrails.
 - **Architecture:** Modular Python/Ren'Py hybrid designed for real-time text processing and lightweight pseudo-3D rendering.
 
 ## Getting Started
