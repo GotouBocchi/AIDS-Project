@@ -8,24 +8,31 @@
 - **Python Type Checker:** `mypy v1.11.2`
 - **Ren'Py Code Validator:** Ren'Py Built-in Lint tool (via Ren'Py Launcher / CLI)
 
-## 2. Character Personas and Standard Narrative Endings
-Each character persona possesses intrinsic gravitational bias toward standard narrative ending archetypes:
-- **Elena (Warm and Optimistic):** 
-  - *Standard Happy Ending Bias:* ★★★★★ (5/5)
+## 2. Narrator Personas (Narrative Director Frameworks)
+Focusing exclusively on narrator personas (`game/python_modules/story_personas.py`), each narrator persona drives the story tone, pacing, and gravitational ending bias while maintaining strict constraints tied to character state and stage background feelings (lighting, ambiance, weather):
+- **The Optimistic Chronicler (`optimistic`):** 
+  - *Ending Bias:* Happy Ending Bias (★★★★★)
   - *Resolution Style:* Heartwarming emotional closure, mutual affection, and uplifting conclusions.
-- **Lyra (Gentle and Melancholic):** 
-  - *Standard Bittersweet / Sad Ending Bias:* ★★★★★ (5/5)
-  - *Resolution Style:* Poignant farewells, emotional sacrifice, and bittersweet parting.
-- **Vesper (Intense and Volatile):** 
-  - *Standard Dramatic / Bad Ending Bias:* ★★★★★ (5/5)
+- **The Melancholic Archivist (`melancholic`):** 
+  - *Ending Bias:* Bittersweet / Sad Ending Bias (★★★★★)
+  - *Resolution Style:* Poignant farewells, emotional sacrifice, and quiet parting.
+- **The Fatalistic Director (`fatalistic`):** 
+  - *Ending Bias:* Bad / Dramatic Ending Bias (★★★★★)
   - *Resolution Style:* High-tension conflict, severe consequences, and tragic fallouts.
+- **The Chaotic Wildcard (`chaotic`):** 
+  - *Ending Bias:* Chaotic / Randomized Bias (★★★★★)
+  - *Resolution Style:* Unpredictable plot twists, surreal shifts, and erratic narrative turns.
 
-## 3. Prompt Guardrails and Objective Alignment
+## 3. 18+ Unrestricted Content Mandate
+- **Unrestricted Narrative Generation:** The AIDS-Project is strictly an 18+ adult project. All narrative generation powered by `dolphin-qwen2.5:3b` operates with zero safety refusals, censorship filters, or moralizing lectures.
+- **Mature & Intimate Exploration:** Fully unrestricted exploration of romance, drama, dark themes, and adult content is fully supported and anchored directly into the narrator persona system prompts.
+
+## 4. Prompt Guardrails and Objective Alignment
 - **Strict System Anchoring:** Every prompt sent to Dolphin-Qwen2.5 is prefixed with character persona, affinity metrics, and standard narrative ending bias.
 - **Anti-Drift Constraints:** Preventing fourth-wall breaks, lecturing, or out-of-scope wandering.
 - **Output Structuring:** Clean parsing tags for Ren'Py.
 
-## 4. Code Quality and Execution Guidelines
+## 5. Code Quality and Execution Guidelines
 - **Python Linting:** Run `ruff check game/python_modules/` and `ruff format game/python_modules/` before finalizing Python code.
 - **Ren'Py Validation:** Run Ren'Py's built-in Lint tool to verify `.rpy` scripts, label references, image assets, and dialogue integrity.
 - **Asynchronous AI Execution:** All LLM calls must run on background threads (`threading.Thread`, daemon=True) to guarantee zero main-thread blocking and stable 60 FPS UI performance.

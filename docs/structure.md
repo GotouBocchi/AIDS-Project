@@ -15,3 +15,4 @@ Maps out every file and directory to ensure precise file targeting without repos
 | `game/options.rpy` | Game configuration and resolution settings. |
 | `game/gui.rpy` | Visual styling and font configurations. |
 | `game/python_modules/` | AI intent parsing, Ollama (`dolphin-qwen2.5:3b`) client, and ending state tracking. |
+| `game/python_modules/story_personas.py` | Narrator Personas (Narrative Director frameworks) defining ending biases (Happy, Sad, Bad, Chaotic) and contextual constraints tied to character state and stage background feelings. |

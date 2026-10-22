@@ -1,6 +1,6 @@
 # AIDS-Project: AI-Driven Interactive Story Game
 
-AIDS-Project is a free, open-source story game where you can type whatever you want instead of choosing from fixed dialogue options. Powered by a smart offline AI running right on your computer, the system acts as a dynamic narrator and persona generator, shaping characters, dialogue, and dramatic arcs in real time based on your interactions.
+AIDS-Project is a free, open-source 18+ unrestricted story game where you can type whatever you want instead of choosing from fixed dialogue options. Powered by a smart offline AI running right on your computer, the system acts as a dynamic narrator and persona generator, shaping characters, dialogue, and dramatic arcs in real time based on your interactions with zero safety refusals or censorship.
 
 ## How It Works
 - **Type What You Want:** Instead of picking from a preset list of choices, you type your own replies and actions.
