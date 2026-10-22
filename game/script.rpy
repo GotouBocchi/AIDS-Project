@@ -7,8 +7,9 @@ define e = Character("Eileen")
 
 
 label splashscreen:
-    # Display 18+ content warning before the main menu loads
-    call screen age_warning
+    # Check if the player has already verified their age in a previous session
+    if not persistent.is_adult:
+        call screen age_warning
     return
 
 

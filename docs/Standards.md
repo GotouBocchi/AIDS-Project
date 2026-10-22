@@ -37,3 +37,4 @@ Focusing exclusively on narrator personas (`game/python_modules/story_personas.p
 - **Ren'Py Validation:** Run Ren'Py's built-in Lint tool to verify `.rpy` scripts, label references, image assets, and dialogue integrity.
 - **Asynchronous AI Execution:** All LLM calls must run on background threads (`threading.Thread`, daemon=True) to guarantee zero main-thread blocking and stable 60 FPS UI performance.
 - **Strict Decoupling:** AI logic and intent parsing must remain isolated in `game/python_modules/`, completely subject to low-end hardware memory bounds.
+- **Logical Code Placement:** New functions, UI screens, variables, or script blocks must be placed within their logically appropriate section inside existing files (e.g., UI screens near related menu screens in `game/screens.rpy`, script labels in `game/script.rpy`) rather than blindly appending them to the end of files.

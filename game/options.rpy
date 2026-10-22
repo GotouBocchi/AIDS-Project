@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("AIDS_Project")
+define config.name = _("AIDS Project")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -23,13 +23,14 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "1.0"
+define config.version = "0.0.1"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = _p("""
+AIDS Project is a 100% free, open-source 18+ unrestricted AI-driven visual novel framework built on Ren'Py 8.3.4, featuring Live 2.5D visuals and real-time AI narrative generation via Ollama (dolphin-qwen2.5:3b).
 """)
 
 
