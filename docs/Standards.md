@@ -8,7 +8,24 @@
 - **Python Type Checker:** `mypy v1.11.2`
 - **Ren'Py Code Validator:** Ren'Py Built-in **Lint** tool (via Ren'Py Launcher / CLI)
 
-## 2. Code Quality & Execution Guidelines
+## 2. Character Ending Biases & Standard Narrative Endings
+Each AI character possesses intrinsic gravitational bias toward standard narrative ending archetypes:
+- **AI Character A (Optimistic / Warm):** 
+  - *Standard Happy Ending Bias:* ★★★★★ (5/5)
+  - *Resolution Style:* Heartwarming emotional closure, mutual affection, and uplifting conclusions.
+- **AI Character B (Melancholic / Bittersweet):** 
+  - *Standard Sad / Bittersweet Ending Bias:* ★★★★★ (5/5)
+  - *Resolution Style:* Poignant farewells, emotional sacrifice, and bittersweet parting.
+- **AI Character C (Volatile / High Stakes):** 
+  - *Standard Dramatic / Bad Ending Bias:* ★★★★★ (5/5)
+  - *Resolution Style:* High-tension conflict, severe consequences, and tragic fallouts.
+
+## 3. Prompt Guardrails & Objective Alignment
+- **Strict System Anchoring:** Every prompt sent to Hermes 3 is prefixed with character persona, affinity metrics, and standard narrative ending bias.
+- **Anti-Drift Constraints:** Preventing fourth-wall breaks, lecturing, or out-of-scope wandering.
+- **Output Structuring:** Clean parsing tags for Ren'Py.
+
+## 4. Code Quality & Execution Guidelines
 - **Python Linting:** Run `ruff check game/python_modules/` and `ruff format game/python_modules/` before finalizing Python code.
 - **Ren'Py Validation:** Run Ren'Py's built-in **Lint** tool to verify `.rpy` scripts, label references, image assets, and dialogue integrity.
 - **Asynchronous AI Execution:** All LLM calls must run on background threads (`threading.Thread`, daemon=True) to guarantee zero main-thread blocking and stable 60 FPS UI performance.
