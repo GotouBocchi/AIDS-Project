@@ -4,15 +4,15 @@ Maps out every file and directory to ensure precise file targeting without repos
 
 | Path | Purpose / Responsibility |
 | :--- | :--- |
-| `gemini.md` | Core project index and architecture overview. |
-| `README.md` | Public-facing player overview and project vision. |
-| `CHANGELOG.md` | Version history and patch notes. |
+| `GEMINI.md` | Core project index, architecture overview, and agent guidelines. |
+| `README.md` | Public-facing player overview, version status, and project vision. |
+| `history.md` | Version history and patch notes (changelog). |
 | `docs/structure.md` | This file map. |
-| `docs/optimization.md` | Low-end PC hardware constraints and 2.5D asset budgets. |
-| `docs/standards.md` | Pinned versions, prompt guardrails, and dating sim ending architecture. |
-| `game/script.rpy` | Ren'Py entry point and story flow. |
-| `game/screens.rpy` | UI definitions and player text input screens. |
-| `game/options.rpy` | Game configuration and resolution settings. |
-| `game/gui.rpy` | Visual styling and font configurations. |
+| `docs/optimization.md` | Low-end PC hardware constraints, non-blocking threading, and asset budgets. |
+| `docs/standards.md` | Pinned tool versions, prompt guardrails, and narrator personas architecture. |
+| `game/script.rpy` | Ren'Py entry point, splashscreen age check (`age_warning`), and story flow. |
+| `game/screens.rpy` | UI definitions, player text input screens, and 18+ content warning modal. |
+| `game/options.rpy` | Game configuration, window properties, and version tracking (`config.version`). |
+| `game/gui.rpy` | Visual styling, fonts, and UI component parameters. |
 | `game/python_modules/` | AI intent parsing, Ollama (`dolphin-qwen2.5:3b`) client, and ending state tracking. |
 | `game/python_modules/story_personas.py` | Narrator Personas (Narrative Director frameworks) defining ending biases (Happy, Sad, Bad, Chaotic) and contextual constraints tied to character state and stage background feelings. |
