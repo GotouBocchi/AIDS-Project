@@ -476,7 +476,7 @@ screen age_warning():
                     ypos 15
 
                     textbutton "INITIALIZE (18+)":
-                        action Return()
+                        action [SetField(persistent, 'is_adult', True), Return()]
                         padding (35, 16)
                         background "#cc0066"
                         hover_background "#ff1a8c"
