@@ -2,21 +2,33 @@
 Narrator Personas Module for AIDS-Project (Ren'Py 8.3 / Python 3.9)
 Defines overarching Narrator Personas (Narrative Director frameworks) that drive the story tone,
 pacing, and ending biases (Happy, Sad, Bad, Chaotic) while remaining constrained by character states
-and stage background feelings. 
+and stage background feelings.
 CONTENT MANDATE: 18+ Unrestricted, mature, and unconstrained narrative generation with zero safety refusals.
 """
 
+from typing import Dict
+
+
 class NarratorPersona:
-    def __init__(self, key, name, ending_bias, genre_setting, description, system_prompt):
-        self.key = key
-        self.name = name
-        self.ending_bias = ending_bias  # e.g., "Happy", "Sad/Bittersweet", "Bad/Dramatic", "Chaotic/Random"
-        self.genre_setting = genre_setting
-        self.description = description
-        self.system_prompt = system_prompt
+    def __init__(
+        self,
+        key: str,
+        name: str,
+        ending_bias: str,
+        genre_setting: str,
+        description: str,
+        system_prompt: str,
+    ) -> None:
+        self.key: str = key
+        self.name: str = name
+        self.ending_bias: str = ending_bias  # e.g., "Happy", "Sad/Bittersweet", "Bad/Dramatic", "Chaotic/Random"
+        self.genre_setting: str = genre_setting
+        self.description: str = description
+        self.system_prompt: str = system_prompt
+
 
 # Define canonical Narrator Personas with specific ending biases, stage/character constraints, and 18+ unrestricted mandate
-NARRATOR_PERSONAS = {
+NARRATOR_PERSONAS: Dict[str, NarratorPersona] = {
     "optimistic": NarratorPersona(
         key="optimistic",
         name="The Optimistic Chronicler",
@@ -30,7 +42,7 @@ NARRATOR_PERSONAS = {
             "CRITICAL CONSTRAINTS: You must strictly respect the active character's personality and the stage background feelings (lighting, ambient mood, weather). "
             "Weave the current character's internal state and stage ambiance into your narration, while subtly steering the emotional arc toward warmth and resolution. "
             "Never break the fourth wall, never lecture the player, and avoid out-of-scope wandering."
-        )
+        ),
     ),
     "melancholic": NarratorPersona(
         key="melancholic",
@@ -45,7 +57,7 @@ NARRATOR_PERSONAS = {
             "CRITICAL CONSTRAINTS: You must strictly respect the active character's personality and the stage background feelings (lighting, ambient mood, weather). "
             "Weave the current character's internal state and stage ambiance into your narration, while gently steering the emotional arc toward poetic melancholy. "
             "Never break the fourth wall, never lecture the player, and avoid out-of-scope wandering."
-        )
+        ),
     ),
     "fatalistic": NarratorPersona(
         key="fatalistic",
@@ -60,7 +72,7 @@ NARRATOR_PERSONAS = {
             "CRITICAL CONSTRAINTS: You must strictly respect the active character's personality and the stage background feelings (lighting, ambient mood, weather). "
             "Weave the current character's internal state and stage ambiance into your narration, while relentlessly driving the emotional arc toward tension and impending crisis. "
             "Never break the fourth wall, never lecture the player, and avoid out-of-scope wandering."
-        )
+        ),
     ),
     "chaotic": NarratorPersona(
         key="chaotic",
@@ -75,14 +87,16 @@ NARRATOR_PERSONAS = {
             "CRITICAL CONSTRAINTS: You must strictly respect the active character's personality and the stage background feelings (lighting, ambient mood, weather), "
             "yet introduce surprising, randomized narrative complications and dynamic subversion. "
             "Never break the fourth wall, never lecture the player, and avoid out-of-scope wandering."
-        )
-    )
+        ),
+    ),
 }
 
-def get_narrator_persona(key):
+
+def get_narrator_persona(key: str) -> NarratorPersona:
     """Retrieve a narrator persona by key (e.g. 'optimistic', 'melancholic', 'fatalistic', 'chaotic')."""
     return NARRATOR_PERSONAS.get(key.lower(), NARRATOR_PERSONAS["optimistic"])
 
-def list_narrator_personas():
+
+def list_narrator_personas() -> Dict[str, str]:
     """Return all available narrator persona keys and names."""
     return {k: p.name for k, p in NARRATOR_PERSONAS.items()}

@@ -38,3 +38,8 @@ Focusing exclusively on narrator personas (`game/python_modules/story_personas.p
 - **Asynchronous AI Execution:** All LLM calls must run on background threads (`threading.Thread`, daemon=True) to guarantee zero main-thread blocking and stable 60 FPS UI performance.
 - **Strict Decoupling:** AI logic and intent parsing must remain isolated in `game/python_modules/`, completely subject to low-end hardware memory bounds.
 - **Logical Code Placement:** New functions, UI screens, variables, or script blocks must be placed within their logically appropriate section inside existing files (e.g., UI screens near related menu screens in `game/screens.rpy`, script labels in `game/script.rpy`) rather than blindly appending them to the end of files.
+
+## 6. Documentation & Context Discipline (Anti-Bloat Standards)
+- **Conciseness & High-Signal Rule:** All markdown files (`.md`) and memory stores must remain lean, high-signal, and strictly focused on architecture, core rules, or essential patch notes. Avoid repetitive explanations, conversational filler, or redundant historical details.
+- **Pruning & Consolidation:** When updating documentation (such as `history.md` or `GEMINI.md`), consolidate entries or prune obsolete details rather than accumulating unbounded text.
+- **Agent Context Efficiency:** AI agents must not append redundant summaries, verbose logs, or speculative commentary to repository documentation.

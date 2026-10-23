@@ -9,6 +9,8 @@ The AIDS-Project is a 100% free, no-budget open-source 18+ unrestricted visual n
 
 ## Engineering Mandates and File Targeting
 - **Explicit File Mapping:** Every code modification task must explicitly identify and target the exact file path required using [`docs/structure.md`](docs/structure.md). No guesswork or broad edits to unrelated files.
+- **Version Synchronization Mandate:** Whenever a new version entry is created in `history.md`, the game version (`config.version`) in `game/options.rpy` must be automatically updated in tandem to maintain strict version parity without requiring manual prompting.
+- **Documentation Anti-Bloat Standard:** All markdown files and documentation must adhere to strict conciseness and high-signal rules (`docs/standards.md`), preventing unbounded growth, redundancy, or conversational filler.
 - **Zero Cost and Open Source:** 100% free, offline execution with zero cloud API fees.
 
 ## Documentation Index
