@@ -151,6 +151,9 @@ style say_label:
     properties gui.text_properties("name", accent=True)
     xalign gui.name_xalign
     yalign 0.5
+    color "#ff007f"
+    bold True
+    size 36
 
 style say_dialogue:
     properties gui.text_properties("dialogue")
@@ -160,6 +163,8 @@ style say_dialogue:
     ypos gui.dialogue_ypos
 
     adjust_spacing False
+    color "#f8fafc"
+    size 32
 
 ## Input screen ################################################################
 ##
@@ -174,26 +179,30 @@ style say_dialogue:
 screen input(prompt):
     style_prefix "input"
 
-    window:
+    frame:
+        background "#05050fec"
+        padding (45, 35)
+        xalign 0.5
+        yalign 0.45
+        xsize 1050
+        ysize 260
 
         vbox:
-            xanchor gui.dialogue_text_xalign
-            xpos gui.dialogue_xpos
-            xsize gui.dialogue_width
-            ypos gui.dialogue_ypos
+            spacing 20
+            xfill True
 
-            text prompt style "input_prompt"
-            input id "input"
+            text prompt style "input_prompt" color "#00f0ff" size 24 bold True
+            input id "input" color "#ffffff" size 26
 
 style input_prompt is default
 
 style input_prompt:
-    xalign gui.dialogue_text_xalign
+    xalign 0.0
     properties gui.text_properties("input_prompt")
 
 style input:
-    xalign gui.dialogue_text_xalign
-    xmaximum gui.dialogue_width
+    xalign 0.0
+    xmaximum 980
 
 
 ## Choice screen ###############################################################
@@ -223,11 +232,22 @@ style choice_vbox:
 
     spacing gui.choice_spacing
 
-style choice_button is default:
-    properties gui.button_properties("choice_button")
+style choice_button:
+    background "#0f172aee"
+    hover_background "#ff007fdd"
+    padding (30, 16)
+    xminimum 900
+    xmaximum 1200
+    xalign 0.5
 
-style choice_button_text is default:
+style choice_button_text:
     properties gui.text_properties("choice_button")
+    xalign 0.5
+    textalign 0.5
+    color "#f8fafc"
+    hover_color "#ffffff"
+    size 26
+    bold True
 
 
 ## Quick Menu screen ###########################################################
@@ -394,18 +414,21 @@ style navigation_button is gui_button
 style navigation_button_text is gui_button_text
 
 style navigation_button:
-    background None
-    hover_background "#ffffff11"
-    padding (20, 14)
+    background "#0f172a66"
+    hover_background "#cc0066aa"
+    padding (22, 14)
     xalign 0.0
-    xminimum 320
+    xminimum 340
+    xmaximum 340
 
 style navigation_button_text:
     properties gui.text_properties("navigation_button")
     xalign 0.0
     textalign 0.0
-    color "#f0f0f0"
+    color "#f8fafc"
     hover_color "#ffffff"
+    size 22
+    bold True
 
 
 ################################################################################
@@ -421,45 +444,55 @@ screen age_warning():
     zorder 300
 
     frame:
-        background "#0b0b0b"
+        background "#050505f0"
         xfill True
         yfill True
 
-        vbox:
+        frame:
+            background "#0f172aee"
+            padding (50, 40)
             xalign 0.5
             yalign 0.5
-            spacing 40
-            xsize 1000
+            xsize 920
+            ysize 520
 
-            # Warning Header
-            text "18+ CONTENT WARNING" size 40 color "#ff3333" xalign 0.5 text_align 0.5 bold True
-
-            # Explanatory Text in clear layman terms
-            text "Welcome to AIDS-Project.\n\nThis game contains mature adult themes and unconstrained AI-generated narratives intended strictly for mature audiences.\n\nYou must be 18 years of age or older (or the legal age of majority in your region) to play.\n\nAre you 18 years of age or older?" size 22 color "#f0f0f0" xalign 0.5 text_align 0.5 line_spacing 8
-
-            # Layman Action Buttons (Yes / No alternative)
-            hbox:
+            vbox:
                 xalign 0.5
-                spacing 80
-                ypos 10
+                yalign 0.5
+                spacing 25
+                xsize 820
 
-                textbutton "Yes, I am 18+":
-                    action Return()
-                    padding (30, 16)
-                    background "#1a331a"
-                    hover_background "#264d26"
-                    text_color "#ffffff"
-                    text_hover_color "#44ff44"
-                    text_size 20
+                # Warning Header
+                text "AIDS-PROJECT // SYSTEM INITIALIZATION" size 18 color "#38bdf8" xalign 0.5 text_align 0.5 bold True
+                text "18+ UNRESTRICTED AI SANDBOX" size 36 color "#cc0066" xalign 0.5 text_align 0.5 bold True
 
-                textbutton "I am under 18":
-                    action Quit(confirm=False)
-                    padding (30, 16)
-                    background "#331a1a"
-                    hover_background "#4d2626"
-                    text_color "#ffffff"
-                    text_hover_color "#ff4444"
-                    text_size 20
+                # Explanatory Text in clear layman terms
+                text "Welcome to the AI-Driven Live 2.5D Visual Novel Sandbox.\n\nThis open-source environment features unconstrained real-time AI narrative generation (Ollama / dolphin-qwen2.5:3b) with adult themes and zero safety censorship.\n\nYou must be 18 years of age or older to enter this sandbox environment." size 18 color "#e2e8f0" xalign 0.5 text_align 0.5 line_spacing 6
+
+                # Layman Action Buttons (Yes / No alternative)
+                hbox:
+                    xalign 0.5
+                    spacing 60
+                    ypos 15
+
+                    textbutton "INITIALIZE (18+)":
+                        action Return()
+                        padding (35, 16)
+                        background "#cc0066"
+                        hover_background "#ff1a8c"
+                        text_color "#ffffff"
+                        text_hover_color "#ffffff"
+                        text_size 18
+                        text_bold True
+
+                    textbutton "EXIT":
+                        action Quit(confirm=False)
+                        padding (35, 16)
+                        background "#1e293b"
+                        hover_background "#334155"
+                        text_color "#94a3b8"
+                        text_hover_color "#ffffff"
+                        text_size 18
 
 
 ## Main Menu screen ############################################################
