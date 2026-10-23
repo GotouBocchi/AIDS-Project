@@ -289,59 +289,123 @@ style quick_button_text:
 
 screen navigation():
 
-    vbox:
-        style_prefix "navigation"
+    if main_menu and not renpy.get_screen("about") and not renpy.get_screen("preferences") and not renpy.get_screen("load") and not renpy.get_screen("save") and not renpy.get_screen("history") and not renpy.get_screen("help"):
 
-        xpos gui.navigation_xpos
-        yalign 0.5
+        vbox:
+            style_prefix "navigation"
+            xalign 0.5
+            yalign 0.6
+            xsize 340
+            spacing 20
 
-        spacing gui.navigation_spacing
+            textbutton _("Start") action Start():
+                xalign 0.5
+                xfill True
 
-        if main_menu:
+            textbutton _("Load") action ShowMenu("load"):
+                xalign 0.5
+                xfill True
 
-            textbutton _("Start") action Start()
+            textbutton _("Preferences") action ShowMenu("preferences"):
+                xalign 0.5
+                xfill True
 
-        else:
+            textbutton _("About") action ShowMenu("about"):
+                xalign 0.5
+                xfill True
 
-            textbutton _("History") action ShowMenu("history")
+            if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
-            textbutton _("Save") action ShowMenu("save")
+                ## Help isn't necessary or relevant to mobile devices.
+                textbutton _("Help") action ShowMenu("help"):
+                    xalign 0.5
+                    xfill True
 
-        textbutton _("Load") action ShowMenu("load")
+            if renpy.variant("pc"):
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+                ## The quit button is banned on iOS and unnecessary on Android and
+                ## Web.
+                textbutton _("Quit") action Quit(confirm=not main_menu):
+                    xalign 0.5
+                    xfill True
 
-        if _in_replay:
+    else:
 
-            textbutton _("End Replay") action EndReplay(confirm=True)
+        vbox:
+            style_prefix "navigation"
+            xpos gui.navigation_xpos
+            yalign 0.5
+            xsize 320
+            spacing 20
 
-        elif not main_menu:
+            textbutton _("History") action ShowMenu("history"):
+                xalign 0.0
+                xfill True
 
-            textbutton _("Main Menu") action MainMenu()
+            textbutton _("Save") action ShowMenu("save"):
+                xalign 0.0
+                xfill True
 
-        textbutton _("About") action ShowMenu("about")
+            textbutton _("Load") action ShowMenu("load"):
+                xalign 0.0
+                xfill True
 
-        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+            textbutton _("Preferences") action ShowMenu("preferences"):
+                xalign 0.0
+                xfill True
 
-            ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
+            if _in_replay:
 
-        if renpy.variant("pc"):
+                textbutton _("End Replay") action EndReplay(confirm=True):
+                    xalign 0.0
+                    xfill True
 
-            ## The quit button is banned on iOS and unnecessary on Android and
-            ## Web.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+            elif not main_menu:
+
+                textbutton _("Main Menu") action MainMenu():
+                    xalign 0.0
+                    xfill True
+
+            textbutton _("About") action ShowMenu("about"):
+                xalign 0.0
+                xfill True
+
+            if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+
+                ## Help isn't necessary or relevant to mobile devices.
+                textbutton _("Help") action ShowMenu("help"):
+                    xalign 0.0
+                    xfill True
+
+            if renpy.variant("pc"):
+
+                ## The quit button is banned on iOS and unnecessary on Android and
+                ## Web.
+                textbutton _("Quit") action Quit(confirm=not main_menu):
+                    xalign 0.0
+                    xfill True
+
+            textbutton _("Return") action Return():
+                xalign 0.0
+                xfill True
 
 
 style navigation_button is gui_button
 style navigation_button_text is gui_button_text
 
 style navigation_button:
-    size_group "navigation"
-    properties gui.button_properties("navigation_button")
+    background None
+    hover_background "#ffffff11"
+    padding (20, 14)
+    xalign 0.0
+    xminimum 320
 
 style navigation_button_text:
     properties gui.text_properties("navigation_button")
+    xalign 0.0
+    textalign 0.0
+    color "#f0f0f0"
+    hover_color "#ffffff"
 
 
 ################################################################################
@@ -411,24 +475,33 @@ screen main_menu():
 
     add gui.main_menu_background
 
-    ## This empty frame darkens the main menu.
+    # Subtle dark overlay for cinematic depth across the whole screen
     frame:
-        style "main_menu_frame"
-
-    ## The use statement includes another screen inside this one. The actual
-    ## contents of the main menu are in the navigation screen.
-    use navigation
+        background "#00000044"
+        xfill True
+        yfill True
 
     if gui.show_name:
 
         vbox:
             style "main_menu_vbox"
+            xalign 0.5
+            ypos 100
+            spacing 8
 
             text "[config.name!t]":
                 style "main_menu_title"
+                xalign 0.5
+                text_align 0.5
 
-            text "[config.version]":
+            text "v[config.version]":
                 style "main_menu_version"
+                xalign 0.5
+                text_align 0.5
+
+    ## The use statement includes another screen inside this one. The actual
+    ## contents of the main menu are in the navigation screen.
+    use navigation
 
 
 style main_menu_frame is empty
@@ -438,26 +511,23 @@ style main_menu_title is main_menu_text
 style main_menu_version is main_menu_text
 
 style main_menu_frame:
-    xsize 420
-    yfill True
-
-    background "gui/overlay/main_menu.png"
+    background None
 
 style main_menu_vbox:
-    xalign 1.0
-    xoffset -30
-    xmaximum 1200
-    yalign 1.0
-    yoffset -30
+    xalign 0.5
 
 style main_menu_text:
     properties gui.text_properties("main_menu", accent=True)
 
 style main_menu_title:
     properties gui.text_properties("title")
+    size 58
+    color "#ffffff"
 
 style main_menu_version:
     properties gui.text_properties("version")
+    size 18
+    color "#cbd5e1"
 
 
 ## Game Menu screen ############################################################
@@ -528,11 +598,6 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
                     transclude
 
     use navigation
-
-    textbutton _("Return"):
-        style "return_button"
-
-        action Return()
 
     label title
 
