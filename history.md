@@ -2,6 +2,14 @@
 
 All updates and patches for **AIDS-Project** are documented here.
 
+## [0.0.4] - October 24, 2026
+### Added
+- **Narrator Selection Confirmation:** Added a detailed confirmation step to the narrator selection process. Players can now preview a persona's ending bias, genre setting, and description before confirming their choice or going back to the main menu.
+
+## [0.0.3] - October 24, 2026
+### Added
+- **Narrator Persona Selection:** Implemented an in-game selection menu at the start of the story, allowing players to choose between Optimistic, Melancholic, Fatalistic, and Chaotic narrator personas to drive the narrative tone and ending bias.
+
 ## [0.0.2] - October 23, 2026
 ### Improvements & Architecture
 - **Narrative Engine Stability:** Refactored the internal narrator personas framework to ensure robust performance, clean type safety, and seamless integration with our local AI runtime (`dolphin-qwen2.5:3b`).
