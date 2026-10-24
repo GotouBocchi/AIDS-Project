@@ -7,30 +7,33 @@ screen narrator_selection():
     default current_key = "optimistic"
 
     frame:
-        background "#05050fee"
+        background "#030712f8"
         xfill True
         yfill True
-        padding (80, 60)
+        padding (70, 50)
 
         vbox:
-            spacing 25
+            spacing 30
             xfill True
 
-            # Title & Subtitle
-            text "CHOOSE NARRATOR PERSONA" size 36 color "#00f0ff" bold True xalign 0.5
-            text "Select the narrative director framework that will shape your story's tone, pacing, and outcome." size 18 color "#94a3b8" xalign 0.5
+            # Title & Subtitle with generous spacing and readable sizes
+            vbox:
+                spacing 8
+                xalign 0.5
+                text "CHOOSE NARRATOR PERSONA" size 42 color "#00f0ff" bold True xalign 0.5
+                text "Select the narrative director framework that will shape your story's tone, pacing, and outcome." size 20 color "#94a3b8" xalign 0.5 text_align 0.5
 
-            null height 15
+            null height 10
 
             hbox:
-                spacing 40
+                spacing 45
                 xfill True
                 yfill True
 
-                # Left side: List of Personas
+                # Left side: List of Personas (scrollable/spacious buttons)
                 vbox:
-                    spacing 12
-                    xsize 550
+                    spacing 16
+                    xsize 520
 
                     python:
                         from story_personas import NARRATOR_PERSONAS
@@ -39,15 +42,15 @@ screen narrator_selection():
                     for p in personas_list:
                         button:
                             xfill True
-                            padding (20, 18)
-                            background ("#ff007f44" if current_key == p.key else "#0f172acc")
-                            hover_background "#ff007f66"
+                            padding (25, 22)
+                            background ("#cc006655" if current_key == p.key else "#0f172acc")
+                            hover_background "#cc006699"
                             action SetScreenVariable("current_key", p.key)
                             
                             vbox:
-                                spacing 4
-                                text p.name size 20 color "#ffffff" bold True
-                                text p.genre_setting size 13 color "#00f0ff"
+                                spacing 6
+                                text p.name size 24 color "#ffffff" bold True
+                                text p.genre_setting size 15 color "#38bdf8"
 
                 # Right side: Persona Details Panel
                 python:
@@ -55,39 +58,40 @@ screen narrator_selection():
 
                 frame:
                     background "#0f172aee"
-                    padding (40, 35)
+                    padding (50, 45)
                     xfill True
                     yfill True
                     
                     vbox:
-                        spacing 20
+                        spacing 25
                         xfill True
 
-                        text active_persona.name size 28 color "#ff007f" bold True
+                        text active_persona.name size 32 color "#cc0066" bold True
                         
                         vbox:
-                            spacing 4
-                            text "GENRE SETTING" size 13 color "#64748b" bold True
-                            text active_persona.genre_setting size 16 color "#f8fafc"
+                            spacing 6
+                            text "GENRE SETTING" size 14 color "#64748b" bold True
+                            text active_persona.genre_setting size 18 color "#f8fafc"
 
                         vbox:
-                            spacing 4
-                            text "ENDING BIAS" size 13 color "#64748b" bold True
-                            text active_persona.ending_bias size 16 color "#38bdf8"
+                            spacing 6
+                            text "ENDING BIAS" size 14 color "#64748b" bold True
+                            text active_persona.ending_bias size 18 color "#38bdf8"
 
                         vbox:
-                            spacing 4
-                            text "DESCRIPTION & MANDATE" size 13 color "#64748b" bold True
-                            text active_persona.description size 16 color "#e2e8f0"
+                            spacing 6
+                            text "DESCRIPTION & MANDATE" size 14 color "#64748b" bold True
+                            text active_persona.description size 18 color "#e2e8f0" line_spacing 6
 
-                        null height 20
+                        null height 15
 
+                        # Prominent, highly clickable confirmation button
                         textbutton "CONFIRM SELECTION":
                             xalign 0.5
-                            padding (35, 15)
-                            background "#ff007f"
-                            hover_background "#db2777"
+                            padding (50, 18)
+                            background "#cc0066"
+                            hover_background "#ff1a8c"
                             text_color "#ffffff"
                             text_bold True
-                            text_size 18
+                            text_size 20
                             action Return(current_key)
